@@ -1,13 +1,7 @@
-# Sample Hardhat Project
+Multi Signature Wallet Smart Contract [Multisigwallet]
+ 
+How Does A Multisig Wallet Works?
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Multisig requires either a set number of signatures/approvals before a transaction is sent, or a majority share of owners need to approve the transaction that is to be sent.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+Multi sig wallets ensures no one person is able to unilaterally withdraw funds from an account. The more signatures required to execute a transaction, the more distributed the decision-making process can be.
