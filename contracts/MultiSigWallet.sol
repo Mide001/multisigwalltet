@@ -3,10 +3,14 @@
 pragma solidity ^0.8.9;
 pragma abicoder v2;
 
+
 contract Multisig {
+    //declaring variable of owners
     address[] public owners;
+    //declaring a variable 'limitNumberToApprove' to check the number of approvals needed for a transaction
     uint limitNumberToApprove;
 
+    //create a struct 'Transfer' 
     struct Transfer{
         address payable to;
         uint approvals;
@@ -15,10 +19,13 @@ contract Multisig {
         bool sent;
     }
 
+    //create an array of Transfer with variable name 'pendingTransfer'
     Transfer[] pendingTransfer;
 
     mapping (address => mapping(uint => bool)) approvals;
 
+
+    //create a modifier called onlyOwner to restrict calling of some functions
     modifier onlyOwner {
         bool isOwner = false;
         for (uint i = 0; i < owners.length; i++){
